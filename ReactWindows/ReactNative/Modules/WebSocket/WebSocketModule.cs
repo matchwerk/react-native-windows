@@ -157,6 +157,11 @@ namespace ReactNative.Modules.WebSocket
                     { "id", id },
                 });
             }
+            catch (System.Runtime.InteropServices.COMException ex)
+            {
+                //ignore this for now. This would pollute the debugging log.
+                //TODO add proper handling
+            }
             catch (Exception ex)
             {
                 OnError(id, ex);
